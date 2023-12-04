@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Str;
 
 /**
@@ -10,6 +11,7 @@ use Illuminate\Support\Str;
  */
 class UserFactory extends Factory
 {
+    use HasFactory;
     /**
      * Define the model's default state.
      *
@@ -23,6 +25,11 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
+            'admin' => fake()->boolean(10), // 10% de chance d'être admin, ajustez selon vos besoins.
+            'telephone' => fake()->numerify('########'), // Génère un numéro de téléphone aléatoire de 10 chiffres.
+            'adresse' => fake()->address,
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->boolean('admin')->default(false);
             $table->Integer('telephone');
             $table->String('adresse');
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

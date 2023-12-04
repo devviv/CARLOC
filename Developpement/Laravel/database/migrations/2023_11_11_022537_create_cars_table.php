@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('img_path');
             $table->integer('numero_chassis');
             $table->boolean('disponible')->default('true');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

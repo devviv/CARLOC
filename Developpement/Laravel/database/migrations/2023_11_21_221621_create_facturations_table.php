@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('remise');
             
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

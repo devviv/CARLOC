@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Reservation;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,14 @@ class PaiementFactory extends Factory
     public function definition(): array
     {
         return [
-            //
-        ];
+        'user_id' => function () {
+            return User::inRandomOrder()->first()->id;
+        },
+        'reservation_id' => function () {
+            return Reservation::inRandomOrder()->first()->id;
+        },
+        'remise' => fake()->numberBetween(0, 100),
+        'etat' => fake()->boolean,
+    ];
     }
 }

@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use Illuminate\Http\Request;
 
 class carController extends Controller
 {
     public function index(){
-        return view("carloc.acceuil");
+        $cars = Car::orderBy("create_at", "desc")->paginate(9);
+        return view("carloc.acceuil", compact("cars"));
     }
     public function cars(){
-        return view("carloc.cars");
+        $cars = Car::orderBy("create_at", "desc")->paginate(21);
+        return view("carloc.cars", compact("cars"));
+    }
+    public function show_car($id){
+        $car = Car::where("id", $id)->first();
+        return view("carloc.cars", compact("car"));
     }
     public function about(){
         return view("carloc.about");

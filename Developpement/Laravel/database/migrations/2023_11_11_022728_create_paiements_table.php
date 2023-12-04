@@ -23,6 +23,7 @@ return new class extends Migration
             $table->boolean('etat')->default(false);
             
             $table->timestamps();
+            $table->softDeletes();
         });
     }
     /**

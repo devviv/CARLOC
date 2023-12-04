@@ -28,6 +28,7 @@ return new class extends Migration
 
             $table->boolean('livré')->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
