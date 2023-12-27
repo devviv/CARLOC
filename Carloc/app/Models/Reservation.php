@@ -23,5 +23,9 @@ class Reservation extends Model
     {
         return $this->hasOne(Paiement::class);
     }
+    public function abonnements()
+    {
+        return $this->hasOne(Abonnement::class);
+    }
 
 }

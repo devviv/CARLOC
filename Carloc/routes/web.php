@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AbonnementController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\PaiementController;
 use App\Http\Controllers\PanierController;
@@ -30,10 +31,17 @@ Route::get('/dashboard', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
     Route::get('/add-panier/{id}', [PanierController::class, 'addPanier'])->name('add_panier');
+
     Route::get('/payform/{id}', [CarController::class, 'payform'])->name('payform');
+    Route::get('/abonnement-payform/{id}', [AbonnementController::class, 'abonnement_payform'])->name('abonnement_payform');
+
     Route::post('/payer', [PaiementController::class, 'store'])->name('payer');
+    Route::post('/abonnement-payer', [AbonnementController::class, 'store'])->name('abonnement_payer');
+
     Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations');
 });
 
@@ -42,6 +50,7 @@ Route::get('/cars', [CarController::class, 'cars'])->name('cars');
 Route::get('/tarifs', [CarController::class, 'tarifs'])->name('tarifs');
 Route::get('/about', [CarController::class, 'about'])->name('about');
 Route::get('/show-car/{id}', [CarController::class, 'show_car'])->name('show_car');
+Route::get('/abonnement-show-car/{id}', [AbonnementController::class, 'abonnement_show_car'])->name('abonnement_show_car');
 Route::get('/contact', [CarController::class, 'contact'])->name('contact');
 
 

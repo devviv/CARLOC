@@ -34,8 +34,8 @@ class PaiementController extends Controller
     {
         $request->validated();
         $date_debut = Carbon::createFromFormat('Y-m-d', $request->input('date_debut'));
-        $date_retour = $date_debut->addDays($request->input('date_debut'));
-        $car = Car::find($request->input('car_id'))->first();
+        $date_retour = $date_debut->addDays($request->input('jours'));
+        $car = Car::find($request->input('car_id'));
 
         $reservation = Reservation::create([
             "user_id" => Auth()->id(),

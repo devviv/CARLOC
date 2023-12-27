@@ -24,6 +24,8 @@ return new class extends Migration
 
             $table->enum('etat', ['paye', 'non_paye']);
 
+            $table->date('date_debut');
+
             $table->date('date_retour');
 
             $table->timestamps();

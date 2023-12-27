@@ -14,7 +14,7 @@
         </div>
     </section>
     <div class="form col-md-6 col-sm-12 m-5">
-        <form action="{{route('payer')}}" method="post" class="shadow m-2 p-3 rounded border ">
+        <form action="{{route('abonnement_payer')}}" method="post" class="shadow m-2 p-3 rounded border ">
             @csrf
             <div class="m-2">
                 <label for="numero" class="form-label">Numero de téléphone</label>
@@ -51,13 +51,6 @@
                 <input type="text" class="form-control" name="prix_jour" id="prix_jour" value="{{ $car->prix_par_jour }} FCFA"
                     disabled>
                      @error('prix_jour')
-                    {{$message}}
-                @enderror
-            </div>
-            <div class="m-2">
-                <label for="date_debut" class="form-label">Date de début</label>
-                <input type="date" class="form-control" name="date_debut" id="date_debut">
-                 @error('date_debut')
                     {{$message}}
                 @enderror
             </div>

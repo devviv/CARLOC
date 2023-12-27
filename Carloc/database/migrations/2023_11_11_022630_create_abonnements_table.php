@@ -18,6 +18,8 @@ return new class extends Migration
 
             $table->foreignId('car_id')->references('id')->on('cars')->onDelete('cascade')->onUpdate('cascade');
 
+            $table->foreignId('reservation_id')->references('id')->on('reservations')->onDelete('cascade')->onUpdate('cascade');
+
             $table->integer('nbre_jour');
 
             $table->integer('prix');

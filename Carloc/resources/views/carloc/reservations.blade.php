@@ -44,10 +44,10 @@
                                     <p class="price ml-auto">Délais : {{ $reservation->date_retour }}</p>
                                 </div>
                                 <p class="d-flex mb-0 align-content-center">
-                                    <a href="{{ route('payform', $reservation->car->id) }}"
+                                    <a href="{{ route('abonnement_payform', $reservation->car->id) }}"
                                         class="btn btn-primary py-2 m-1">Abonner
                                     </a>
-                                    <a href="{{ route('show_car', $reservation->car->id) }}"
+                                    <a href="{{ route('abonnement_show_car', $reservation->car->id) }}"
                                         class="btn btn-warning py-2 m-1">Détails
                                     </a>
                                 </p>

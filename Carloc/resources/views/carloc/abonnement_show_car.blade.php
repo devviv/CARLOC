@@ -81,8 +81,7 @@
             </div>
 
             <div class="d-flex">
-                <a href="{{ route('payform', $car->id) }}" class="btn btn-primary m-2" title="Payer">Réserver</a>
-                <a href="{{ route('add_panier', $car->id) }}" class="btn btn-success m-2">Ajouter au panier</a>
+                <a href="{{ route('abonnement_payform', $car->id) }}" class="btn btn-primary m-2" title="Payer">Abonnez</a>
             </div>
             {{-- <div class="row">
                 <div class="col-md d-flex align-self-stretch ftco-animate">
@@ -378,53 +377,6 @@
                     </div>
                 </div>
             </div> --}}
-        </div>
-    </section>
-
-    <section class="ftco-section ftco-no-pt bg-light">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-                    <span class="subheading">Faîtes votre choix</span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="carousel-car owl-carousel">
-                        @foreach ($cars as $car)
-                            <div class="item">
-                                <div class="car-wrap rounded ftco-animate">
-                                    <div class="img rounded d-flex align-items-end"
-                                        style="background-image: url({{ asset('storage/' . $car->img_path) }}">
-                                    </div>
-                                    <div class="text">
-                                        <h2 class="mb-0"><a href="#">{{ $car->Modele }}</a></h2>
-                                        <div class="d-flex mb-3">
-                                            <span class="cat">{{ $car->nom }} </span>
-                                            <p class="price ml-auto">{{ $car->prix_par_jour }} FCFA<span>/ jour</span></p>
-                                        </div>
-                                        <p class="d-flex mb-0 align-content-center">
-                                            <a href="{{ route('payform', $car->id) }}"
-                                                class="btn btn-primary py-2 m-1">Réserver
-                                            </a>
-                                            <a href="{{ route('show_car', $car->id) }}"
-                                                class="btn btn-warning py-2 m-1">Détails
-                                            </a>
-                                            <a href="{{ route('add_panier', $car->id) }}" title="ajouter au panier"
-                                                class="btn btn-success py-2 m-1"><i class="fa fa-cart-arrow-down"
-                                                    aria-hidden="true"></i>
-                                            </a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <div class="text-center mt-5">
-                        <a href="{{ route('cars') }}" class="btn btn-primary">Voir plus</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 @endsection
