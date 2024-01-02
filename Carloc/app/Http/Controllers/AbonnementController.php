@@ -44,6 +44,7 @@ class AbonnementController extends Controller
         $reservation->save();
         $abonnement = Abonnement::create([
             "user_id" => Auth()->id(),
+            "reservation_id" => $reservation->id,
             "car_id" => $request->input('car_id'),
             "nbre_jour" => $request->input('jours'),
             "prix" => $car->prix_par_jour * $request->input('jours'),

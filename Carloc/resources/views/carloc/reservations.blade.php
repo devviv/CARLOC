@@ -39,8 +39,9 @@
                                     <span class="cat">{{ $reservation->car->nom }}</span>
                                     <p class="price ml-auto">Prix payé : {{ $reservation->prix }} FCFA </p>
                                 </div>
-                                <div class="d-flex mb-3">
+                                <div class="mb-3">
                                     {{-- <span class="cat">Jour(s) restant(s) : {{ $jour_restant }}</span> --}}
+                                    <p class="price ml-auto">Début : {{ $reservation->date_debut }}</p>
                                     <p class="price ml-auto">Délais : {{ $reservation->date_retour }}</p>
                                 </div>
                                 <p class="d-flex mb-0 align-content-center">

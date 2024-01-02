@@ -43,6 +43,7 @@ class PaiementController extends Controller
             "nbre_jour" => $request->input('jours'),
             "prix" => $car->prix_par_jour * $request->input('jours'),
             "etat" => "paye",
+            "date_debut" => $request->input('date_debut'),
             "date_retour" => $date_retour,
         ]);
 

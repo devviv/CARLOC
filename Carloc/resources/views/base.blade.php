@@ -6,6 +6,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/apple-touch-icon.png') }} ">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('img/site.webmanifest') }}">
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
         rel="stylesheet">
 
@@ -38,7 +42,9 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('index') }}">Car<span class="text-primary">Loc</span></a>
+            <a class="navbar-brand" href="{{ route('index') }}">
+                <img src="{{asset('img/carloc.png')}}" alt="" width="50px">
+                Car<span class="text-primary">Loc</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                <i class="fa fa-bars" aria-hidden="true"></i> Menu
@@ -47,16 +53,16 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('index') }}">Acceuil</a>
+                        <a class="nav-link text-dark " href="{{ route('index') }}">Acceuil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('cars') }}">Voitures</a>
+                        <a class="nav-link text-dark " href="{{ route('cars') }}">Voitures</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                        <a class="nav-link text-dark " href="{{ route('contact') }}">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('about') }}">A Propos</a>
+                        <a class="nav-link text-dark " href="{{ route('about') }}">A Propos</a>
                     </li>
                 </ul>
                 @auth

@@ -122,9 +122,8 @@
                                             <a href="{{ route('show_car', $car->id) }}"
                                                 class="btn btn-warning py-2 m-1">Détails
                                             </a>
-                                            <a href="{{ route('add_panier', $car->id) }}" title="ajouter au panier"
-                                                class="btn btn-success py-2 m-1"><i class="fa fa-cart-arrow-down"
-                                                    aria-hidden="true"></i>
+                                            <a href="{{ route('add_panier', $car->id) }}" title="ajouter au panier" class="btn btn-success py-2 m-1">
+                                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                             </a>
                                         </p>
                                     </div>
