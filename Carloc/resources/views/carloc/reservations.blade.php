@@ -51,6 +51,9 @@
                                     <a href="{{ route('abonnement_show_car', $reservation->car->id) }}"
                                         class="btn btn-warning py-2 m-1">Détails
                                     </a>
+                                    {{-- <a href="{{ route('facture', $reservation->car->id) }}"
+                                        class="btn btn-success py-2 m-1 fs-1">Avoir la facture
+                                    </a> --}}
                                 </p>
                             </div>
                         </div>

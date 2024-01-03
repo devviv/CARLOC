@@ -43,6 +43,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/abonnement-payer', [AbonnementController::class, 'store'])->name('abonnement_payer');
 
     Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations');
+    Route::get('/facture', [ReservationController::class, 'facture'])->name('facture');
 });
 
 Route::get('/', [CarController::class, 'index'])->name('index');

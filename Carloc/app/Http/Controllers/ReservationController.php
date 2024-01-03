@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Reservation;
 use App\Http\Requests\StoreReservationRequest;
 use App\Http\Requests\UpdateReservationRequest;
+use Illuminate\Auth\Access\Response;
+use Illuminate\Support\Facades\App;
 
 class ReservationController extends Controller
 {
@@ -24,6 +26,13 @@ class ReservationController extends Controller
     public function create()
     {
         //
+    }
+    public function facture()
+    {
+        $pdf = App::make('snappy.pdf.wrapper');
+        $pdf->loadHTML('<h1>Test</h1>');
+        return $pdf->inline();
+
     }
 
     /**
