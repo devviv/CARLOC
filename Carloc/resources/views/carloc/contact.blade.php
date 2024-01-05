@@ -1,6 +1,6 @@
 @extends('base')
 @section('main')
-    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url({{ asset('img/bg_3.jpg') }});"
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url({{ asset('img/contact.jpg') }});"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class="col-md-8 block-9 mb-md-5">
-                    <form action="#" class="bg-light p-5 contact-form">
+                    {{-- <form action="#" class="bg-light p-5 contact-form">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Votre nom">
                         </div>
@@ -64,7 +64,27 @@
                         <div class="form-group">
                             <input type="submit" value="Envoyer le message" class="btn btn-primary py-3 px-5">
                         </div>
-                    </form>
+                    </form> --}}
+                    <iframe
+                        data-tally-src="https://tally.so/embed/wzYDoq?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                        loading="lazy" width="100%" height="457" frameborder="0" marginheight="0" marginwidth="0"
+                        title="Contact form
+"></iframe>
+                    <script>
+                        var d = document,
+                            w = "https://tally.so/widgets/embed.js",
+                            v = function() {
+                                "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])")
+                                    .forEach((function(e) {
+                                        e.src = e.dataset.tallySrc
+                                    }))
+                            };
+                        if ("undefined" != typeof Tally) v();
+                        else if (d.querySelector('script[src="' + w + '"]') == null) {
+                            var s = d.createElement("script");
+                            s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s);
+                        }
+                    </script>
 
                 </div>
             </div>
