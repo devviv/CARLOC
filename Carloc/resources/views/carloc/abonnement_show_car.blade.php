@@ -64,7 +64,7 @@
                         <p> Climatisation</p>
                     </div>
                     <div>
-                        @if ($car->climatisation == 'true')
+                        @if ($car->climatisation == true)
                             <p class="text-left">Oui</p>
                         @else
                             <p class="text-left ml-5">Non</p>
