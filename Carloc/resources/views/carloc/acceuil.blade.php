@@ -15,10 +15,34 @@
         </div>
     </div>
 
-
-
-
+    <div class="search">
+        <form action="/search" method="post" class="col-md-6 col-sm-10 mx-auto">
+            @csrf
+            <div class="input-group mb-3">
+                <input type="text" name="search" class="form-control" placeholder="Rechercher" aria-label="Rechercher"
+                    aria-describedby="basic-addon2">
+                <span class="input-group-text" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></span>
+            </div>
+        </form>
+    </div>
     <section class="ftco-section ftco-no-pt bg-light">
+        <div id="process" class="mt-5 mb-5">
+            <h3 class="text-center mb-2">Comment ça fonctionne?</h3>
+            <div class="row col-md-9 d-flex justify-content-around mx-auto">
+                <div class="col-md-3 col-sm-12 text-center">
+                    <i class="fa fa-search fs-1 text-primary" aria-hidden="true"></i>
+                    <p>Trouver une voiture</p>
+                </div>
+                <div class="col-md-3 col-sm-12 text-center">
+                    <i class="fa-solid fa-money-bill-1-wave fs-1 text-primary "></i>
+                    <p>Réserver la voiture</p>
+                </div>
+                <div class="col-md-3 col-sm-12 text-center">
+                    <i class="fas fa-thumbs-up fs-1 text-primary"></i>
+                    <p>Prendre la voiture</p>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 heading-section text-center ftco-animate mb-5">
@@ -48,7 +72,8 @@
                                             <a href="{{ route('show_car', $car->id) }}"
                                                 class="btn btn-warning py-2 m-1">Détails
                                             </a>
-                                            <a href="{{ route('add_panier', $car->id) }}" title="ajouter au panier" class="btn btn-success py-2 m-1">
+                                            <a href="{{ route('add_panier', $car->id) }}" title="ajouter au panier"
+                                                class="btn btn-success py-2 m-1">
                                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                             </a>
                                         </p>
@@ -57,6 +82,7 @@
                             </div>
                         @endforeach
                     </div>
+                    
                     <div class="text-center mt-5">
                         <a href="{{ route('cars') }}" class="btn btn-primary">Voir plus</a>
                     </div>
@@ -204,7 +230,8 @@
                         </div>
                         <div class="item">
                             <div class="testimony-wrap rounded text-center py-4 pb-5">
-                                <div class="user-img mb-2" style="background-image: url({{ asset('img/person_3.jpg') }})">
+                                <div class="user-img mb-2"
+                                    style="background-image: url({{ asset('img/person_3.jpg') }})">
                                 </div>
                                 <div class="text pt-4">
                                     <p class="mb-4">Je suis un client fidèle de Car. Carloc flexibilité de location, les
@@ -217,7 +244,8 @@
                         </div>
                         <div class="item">
                             <div class="testimony-wrap rounded text-center py-4 pb-5">
-                                <div class="user-img mb-2" style="background-image: url({{ asset('img/person_1.jpg') }})">
+                                <div class="user-img mb-2"
+                                    style="background-image: url({{ asset('img/person_1.jpg') }})">
                                 </div>
                                 <div class="text pt-4">
                                     <p class="mb-4">La qualité du service client chez Carloc est vraiment ce qui les
@@ -231,7 +259,8 @@
                         </div>
                         <div class="item">
                             <div class="testimony-wrap rounded text-center py-4 pb-5">
-                                <div class="user-img mb-2" style="background-image: url({{ asset('img/person_1.jpg') }})">
+                                <div class="user-img mb-2"
+                                    style="background-image: url({{ asset('img/person_1.jpg') }})">
                                 </div>
                                 <div class="text pt-4">
                                     <p class="mb-4">Mon expérience avec Carloc a été excellente. J'ai loué une voiture

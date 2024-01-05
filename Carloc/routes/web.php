@@ -54,6 +54,8 @@ Route::get('/show-car/{id}', [CarController::class, 'show_car'])->name('show_car
 Route::get('/abonnement-show-car/{id}', [AbonnementController::class, 'abonnement_show_car'])->name('abonnement_show_car');
 Route::get('/contact', [CarController::class, 'contact'])->name('contact');
 
+Route::post('/search', [CarController::class, 'search'])->name('search');
+
 
 //Panier
 Route::get('/show-panier', [PanierController::class, 'index'])->name('show_panier');

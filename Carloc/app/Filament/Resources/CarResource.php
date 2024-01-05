@@ -2,16 +2,25 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CarResource\Pages;
-use App\Filament\Resources\CarResource\RelationManagers;
 use App\Models\Car;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
+use Filament\Forms\Components\Toggle;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Tables\Filters\TrashedFilter;
+use App\Filament\Resources\CarResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\CarResource\RelationManagers;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class CarResource extends Resource
 {
@@ -46,8 +55,26 @@ class CarResource extends Resource
                 Forms\Components\TextInput::make('nbre_passagers')
                     ->required()
                     ->numeric(),
-                Forms\Components\TextInput::make('img_path')
-                    ->required(),
+                FileUpload::make('img_path')
+                    ->preserveFilenames()
+                    ->directory('cars')
+                    ->required()
+                    ->unique()
+                    ->getUploadedFileNameForStorageUsing(
+                        function (TemporaryUploadedFile $file): string {
+                            // Get the current date in a format you prefer
+                            $currentDate = now()->format('Ymd_His');
+
+                            // Get the original name of the file
+                            $originalName = $file->getClientOriginalName();
+
+                            // Append the current date to the end of the original name
+                            $newFileName = str($currentDate)->append('_')->append($originalName)->__toString();
+
+                            return $newFileName;
+                        }
+                    )
+                    ->image(),
                 Forms\Components\TextInput::make('numero_chassis')
                     ->required()
                     ->numeric(),
@@ -88,6 +115,7 @@ class CarResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('img_path')
                     ->searchable(),
+                ImageColumn::make('img_path')->disk('local'),
                 Tables\Columns\TextColumn::make('numero_chassis')
                     ->numeric()
                     ->sortable(),
@@ -136,9 +164,6 @@ class CarResource extends Resource
     {
         return [
             'index' => Pages\ListCars::route('/'),
-            'create' => Pages\CreateCar::route('/create'),
-            'view' => Pages\ViewCar::route('/{record}'),
-            'edit' => Pages\EditCar::route('/{record}/edit'),
         ];
     }
 

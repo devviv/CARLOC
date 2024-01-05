@@ -25,12 +25,12 @@ class CarFactory extends Factory
             'Modele' => fake()->word,
             'Description' => fake()->paragraph,
             'date_creation' => fake()->date,
-            'prix_par_jour' => fake()->numberBetween(10000, 50000),
+            'prix_par_jour' => fake()->numberBetween(1000, 10000),
             'quantite' => fake()->numberBetween(0, 5),
             'nbre_passagers' => fake()->numberBetween(2, 4),
             'vitesse' => fake()->numberBetween(100, 300),
             'plaque' => fake()->numberBetween(1000, 9999),
-            'img_path' => 'cars/car-1.jpg',
+            'img_path' => 'cars/car-1.png',
             'numero_chassis' => fake()->unique()->numberBetween(100000, 999999),
             'climatisation' => fake()->boolean(90), // 90% de chance d'être disponible
             'disponible' => fake()->boolean(90), // 90% de chance d'être disponible

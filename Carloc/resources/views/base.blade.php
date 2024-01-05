@@ -137,8 +137,8 @@
                             <li><a href="#" class="py-2 d-block">FAQ</a></li>
                             <li><a href="#" class="py-2 d-block">Modalité de paiement</a></li>
                             <li><a href="#" class="py-2 d-block">Conseils de réservation</a></li>
-                            <li><a href="#" class="py-2 d-block">Comment ça fonctionne</a></li>
-                            <li><a href="#" class="py-2 d-block">Contactez-nous</a></li>
+                            <li><a href="/#process" class="py-2 d-block">Comment ça fonctionne</a></li>
+                            <li><a href="/contact" class="py-2 d-block">Contactez-nous</a></li>
                         </ul>
                     </div>
                 </div>

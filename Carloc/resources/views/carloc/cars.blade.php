@@ -17,6 +17,16 @@
 
 
     <section class="ftco-section bg-light">
+        <div class="search">
+            <form action="/search" method="post" class="col-md-6 col-sm-10 mx-auto">
+                @csrf
+                <div class="input-group mb-3">
+                    <input type="text" name="search" class="form-control" placeholder="Rechercher"
+                        aria-label="Rechercher" aria-describedby="basic-addon2">
+                    <span class="input-group-text" id="basic-addon2"><i class="fa fa-search" aria-hidden="true"></i></span>
+                </div>
+            </form>
+        </div>
         <div class="container">
             <div class="row">
                 @foreach ($cars as $car)
@@ -29,26 +39,26 @@
                                 <h2 class="mb-0"><a href="{{ route('show_car', $car->id) }}">{{ $car->Modele }}</a></h2>
                                 <div class="d-flex mb-3">
                                     <span class="cat">{{ $car->nom }}</span>
-                                    <p class="price ml-auto">${{ $car->prix_par_jour }} FCFA <span>/jour</span></p>
+                                    <p class="price ml-auto">{{ $car->prix_par_jour }} FCFA <span>/jour</span></p>
                                 </div>
                                 <p class="d-flex mb-0 align-content-center">
                                     <a href="{{ route('payform', $car->id) }}" class="btn btn-primary py-2 m-1">Réserver
                                     </a>
-                                    <a href="{{ route('show_car', $car->id) }}"
-                                                class="btn btn-warning py-2 m-1">Détails
-                                            </a>
-                                            <a href="{{ route('add_panier', $car->id) }}" title="ajouter au panier"
-                                                class="btn btn-success py-2 m-1"><i class="fa fa-cart-arrow-down"
-                                                    aria-hidden="true"></i>
-                                            </a>
+                                    <a href="{{ route('show_car', $car->id) }}" class="btn btn-warning py-2 m-1">Détails
+                                    </a>
+                                    <a href="{{ route('add_panier', $car->id) }}" title="ajouter au panier"
+                                        class="btn btn-success py-2 m-1"><i class="fa fa-cart-arrow-down"
+                                            aria-hidden="true"></i>
+                                    </a>
                                 </p>
                             </div>
                         </div>
                     </div>
                 @endforeach
-
-
             </div>
+            {{-- <div class="mb-5">
+                {{$cars->links()}}
+            </div> --}}
         </div>
     </section>
 @endsection
